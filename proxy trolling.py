@@ -57,7 +57,6 @@ $$ |
 \__|
                                   
     ⌜―――――――――――――――――――――――――――――――――――――――――――――――――――――⌝
-    ┇      [Guilded] https://guilded.gg/dxHook            ┇
     ┇      [Github]  https://github.com/ItsYaBoiSimonx    ┇
     ┇      [Telegram] @StraightSW                         ┇
     ⌞―――――――――――――――――――――――――――――――――――――――――――――――――――――⌟
