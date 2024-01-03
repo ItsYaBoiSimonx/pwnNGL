@@ -28,8 +28,8 @@ $ git clone https://github.com/ItsYaBoiSimonx/pwnNGL
   <img src="Images/txs6c7XSyG.png"/>
 </p>
 
-<h2 align="center">
-    ‼ Just as a warning, I am not responsible for anything you do with this project ‼
+<h3 align="center">
+    ⌛ Just as a warning, I am not responsible for anything you do with this project ⌛
     <br>
     Have fun with it, just not too much.
-</h2>
+</h3>

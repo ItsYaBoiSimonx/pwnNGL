@@ -1,6 +1,17 @@
-import datetime, os, httpx, random, threading, time
-from colorama import Fore, Style
-from pystyle import Colorate, Colors, Center
+try:
+    import datetime, os, httpx, random, threading, time
+    from colorama import Fore, Style
+    from pystyle import Colorate, Colors, Center
+except ImportError:
+    os.system("pip3 install datetime")
+    os.system("pip3 install os")
+    os.system("pip3 install httpx")
+    os.system("pip3 install threading")
+    os.system("pip3 install time")
+    os.system("pip3 install pystyle")
+    os.system("pip3 install colorama")
+
+
 headers = {
     "Content-Type": "application/x-www-form-urlencoded",
     "Accept-Language": "en-US,en;q=0.5",
