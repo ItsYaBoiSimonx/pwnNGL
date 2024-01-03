@@ -13,6 +13,6 @@ Direct releases will be out very soon, but as of right now, you can just ```git 
 $ git clone https://github.com/ItsYaBoiSimonx/pwnNGL
 ```
 
-<img align="center" alt="image" src="https://simonx.is-from.space/OBgGfjt10k.png">
+<img align="center" alt="image" src="https://cdn.discordapp.com/attachments/804714126793637898/1192227184933359676/OBgGfjt10k.png?ex=65a84f17&is=6595da17&hm=e86d1d9723c30acb0224aa5f9435e07397be401d846fd035f70ead68fe419b73&">
 
 
