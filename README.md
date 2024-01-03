@@ -3,7 +3,6 @@
 
 <p align="center">
     <img alt="GitHub all releases" src="https://img.shields.io/github/downloads/itsyaboisimonx/pwnNGL/total">
-    <img alt="funny badge" src="https://forthebadge.com/images/featured/featured-built-with-love.svg">
     <img alt="funny badge" src="https://forthebadge.com/images/badges/made-with-python.svg">
     <img alt="funny badge" src="https://forthebadge.com/images/badges/open-source.svg">
     <img alt="funny badge" src="https://forthebadge.com/images/badges/works-on-my-machine.svg">
