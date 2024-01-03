@@ -20,5 +20,5 @@ $ git clone https://github.com/ItsYaBoiSimonx/pwnNGL
 ```
 If you find ANY issues with this program after you've tried it yourself, don't be afraid to make a pull request!
 <p align="center">
-  <img src="Images/OBgGfjt10k.png"/>
+  <img src="Images/txs6c7XSyG.png"/>
 </p>
