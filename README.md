@@ -8,7 +8,7 @@
     <img alt="funny badge" src="https://forthebadge.com/images/badges/works-on-my-machine.svg">
 </p>
 
-Obviously, as previously mentioned, you will need the newest version of python downloaded off the official [python.org](https://www.python.org/downloads) website ([and added to path](https://www.youtube.com/watch?v=3a3UOSBffUI)) to run this.
+Obviously, as previously mentioned, you will need the newest version of python AND PIP downloaded off the official [python.org](https://www.python.org/downloads) website (both python and pip [added to path](https://www.youtube.com/watch?v=3a3UOSBffUI)) to run this correctly.
 
 This tool is fully made in Python, it features active logging, a simple terminal-based UI and extremely fast request times!
 
@@ -22,14 +22,14 @@ Direct releases will be out very soon™, but as of right now, you can just ```g
 $ git clone https://github.com/ItsYaBoiSimonx/pwnNGL
 ```
 
-- If you find ANY issues with this program after you've tried it yourself, don't be afraid to make a pull request or dm me on telegram, @StraightSW 🎉
+* If you find ANY issues with this program after you've tried it yourself, don't be afraid to make a pull request or dm me on telegram, @StraightSW 🎉
 
 <p align="center">
   <img src="Images/txs6c7XSyG.png"/>
 </p>
 
 <h3 align="center">
-    ⌛ Just as a warning, I am not responsible for anything you do with this project ⌛
+    ⌛ Just as an FYI, I am not responsible for anything you do with this project ⌛
     <br>
     Have fun with it, just not too much.
 </h3>
