@@ -7,18 +7,17 @@ import time
 valid = []
 amtValids = 0
 checked = 0
-proxy_file = r"C:\Users\simone\Desktop\guilded serx\proxy fucking\proxies.txt" 
 threads = 200
 
-def count_lines_in_file(file_path):
+def count_lines_in_file():
     try:
-        with open(file_path, "r") as file:
+        with open("proxies.txt", "r") as file:
             line_count = sum(1 for line in file)
         return line_count
     except FileNotFoundError:
         return 0 
     
-proxiestocheck = count_lines_in_file(proxy_file)
+proxiestocheck = count_lines_in_file()
 
 def set_console_window_size(width, height):
     os.system(f"mode con: cols={width} lines={height}")
@@ -48,11 +47,11 @@ os.system('cls' if os.name == 'nt' else 'clear')
 set_console_window_size(90,25)
 
 try:
-    with open(proxy_file, "r"):
+    with open('proxies.txt', "r"):
         pass  # File exists, do nothing
         success("Found proxies file!")
 except FileNotFoundError:
-    with open(proxy_file, "w"):
+    with open('proxies.txt', "w"):
         warning("Proxy file not found! Creating one") # File doesn't exist, create it
         sys.exit()
 def is_proxy_working(proxy):
@@ -64,12 +63,9 @@ def is_proxy_working(proxy):
         return response.status_code == 200
     except Exception as e:
         return False
-
-# File path containing the list of proxies
-proxy_file = r"C:\Users\simone\Desktop\guilded serx\proxy fucking\proxies.txt"
-
+    
 # Read the list of proxies from the file
-with open(proxy_file, 'r') as file:
+with open("proxies.txt", 'r') as file:
     proxies = file.read().splitlines()
 
 
@@ -90,10 +86,10 @@ def check_proxies(proxy_list):
 
 # Check proxies in parallel and get the list of working proxies
 working_proxies = check_proxies(proxies.copy())  # Make a copy of the list to avoid modifying the original
-with open(proxy_file, 'w') as file:
+with open("proxies.txt", 'w') as file:
     pass 
 
-with open(proxy_file, 'w') as file:
+with open("proxies.txt", 'w') as file:
     for proxy in working_proxies:
         file.write(f"{proxy}\n")
         success("Written proxies to file")
