@@ -12,7 +12,7 @@ Obviously, as previously mentioned, you will need the newest version of python A
 
 This tool is fully made in Python, it features active logging, a simple terminal-based UI and extremely fast request times!
 
-This project also features a well-optimized proxy checker; it utilizes over 200 CPU threads to compute requests as fast as possible.
+This project also features a well-optimized proxy checker; it utilizes over 350 threads to compute requests as fast as possible.
 
 <h1 align="center">- USAGE -</h1>
 

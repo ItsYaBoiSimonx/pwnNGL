@@ -1,3 +1,3 @@
 @echo off
-py "proxy trolling.py"
+py "main.py"
 PAUSE

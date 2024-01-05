@@ -1,6 +1,6 @@
 try:
-    import datetime, os, httpx, random, threading, time
-    from colorama import Fore, Style
+    import datetime, os, httpx, random, threading, time, json
+    from colorama import Fore
     from pystyle import Colorate, Colors, Center
 except ImportError:
     os.system("pip3 install datetime")
@@ -10,6 +10,7 @@ except ImportError:
     os.system("pip3 install time")
     os.system("pip3 install pystyle")
     os.system("pip3 install colorama")
+    os.system("pip3 install json")
 
 
 headers = {
@@ -80,12 +81,26 @@ def deviceid():
     )
 
 
+def load_config(filename):
+    try:
+        with open(filename, 'r') as file:
+            config = json.load(file)
+        return config
+    except FileNotFoundError:
+        print("Config file not found. Creating a new one.")
+        return {}
+    except json.JSONDecodeError:
+        print("Error decoding JSON. Check the format of the config file.")
+        return {}
 
+config = load_config("config.json")
 
-username = input(yellowint + " Enter the username of the NGL link - ")
-question = input(yellowint + " Enter the message you want to send through - ")
-num_threads = int(input(yellowint + " Enter the number of threads - "))
-
+username = config["username"]
+question = config["message"]
+num_threads = config["num_threads"] 
+# It's recommended to keep num_threads at 350 through the config.json file
+# If you have a lower end PC, just lower it until it works well enough.
+# Although expect the message sending process to be slower.
 
 
 # Add a variable to store the current proxy index
@@ -96,38 +111,48 @@ def sendmsg():
 
     while True:
         try:
+            # Define proxies and their structure
             proxy = str(random.choice(proxies))
-            ssss = {
+            proxyStructure = {
                 "http://": f"http://{proxy}",
                 "https://": f"http://{proxy}"
             }
+            # Start up the HTTPX session
+            session = httpx.Client(headers=headers, proxies=proxyStructure)
+            # Define the request data
+
             dataToSubmit = {
-                    "username": username,
-                    "question": question,
-                    "deviceId": deviceid(),
-                }
-            client = httpx.Client(headers=headers, proxies=ssss)
-            postresp = client.post("https://ngl.link/api/submit",data=dataToSubmit)
+                "username": username,
+                "question": question,
+                "deviceId": deviceid(),
+            }
+            # Handle all possible outcomes.
+            postresp = session.post("https://ngl.link/api/submit",data=dataToSubmit)
             if postresp.status_code == 200:
                 counter += 1
                 os.system(f'title pwnNGL -=- Messages sent : {counter}')
                 success(f"Sent '{question}' to victim using {proxy}, {counter} messages sent.")
+
             elif postresp.status_code == 404:
                 error(f"User {username} does not exist")
                 exit()
+
             elif postresp.status_code == 429:
                 warning(f"Proxy {proxy} was ratelimited, sleeping for 10 seconds")
+
             elif postresp.status_code == 504 or 403:
                 error(f"Bad proxy! {proxy}, removing")
                 proxies.remove(proxy)
+
             else:
-                error(f"Failed to send message using {proxy}. Error {postresp.status_code}", Fore.RESET)
+                error(f"Failed to send message using {proxy} report this error through Github pull requests! - Error {postresp.status_code}", Fore.RESET)
                 time.sleep(5)
+
         except Exception as e:
             if "403" or "winerror" in str(e):
                 pass
             else:
-                error(f"{str(e)}")
+                print(f"{str(e)}")
 
 
 def run_in_threads(num_threads, func):
@@ -139,5 +164,5 @@ def run_in_threads(num_threads, func):
     for thread in threads:
         thread.join()
 
-while True:
-    run_in_threads(num_threads, sendmsg)
+# Run the function in threads
+run_in_threads(num_threads, sendmsg)
